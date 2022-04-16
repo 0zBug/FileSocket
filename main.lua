@@ -13,7 +13,7 @@ function FileSocket.Connect(Channel)
 
     if not isfolder("Mail") then makefolder("Mail") end
     if not isfolder(Channel) then makefolder(Channel) end
-    if not isfolder(MailBox) then makefolder(MailBox) end
+    makefolder(MailBox)
     
     local Socket = {
         Send = function(self, Message, Bots)
