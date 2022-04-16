@@ -52,6 +52,8 @@ function FileSocket.Connect(Channel)
         OnClose = function() end
     }
 
+    setreadonly(Socket, true)
+
     RunService.RenderStepped:Connect(function()
         for _, Mail in pairs(listfiles(MailBox)) do
             Socket.OnMessage:Fire(readfile(Mail))
