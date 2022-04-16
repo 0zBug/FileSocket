@@ -10,7 +10,7 @@ local LocalPlayer = Players.LocalPlayer
 local FileSocket = {}
 
 function FileSocket.Connect(Channel)
-    local Channel = "Mail/" .. Channel or "" .. "/"
+    local Channel = "Mail/" .. Channel .. "/"
     local MailBox = Channel .. LocalPlayer.Name
 
     if not isfolder("Mail") then makefolder("Mail") end
