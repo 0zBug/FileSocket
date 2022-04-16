@@ -38,13 +38,23 @@ function FileSocket.Connect(Channel)
 
             delfile(Channel)
         end,
-        OnMessage = function(Message) end,
+        OnMessage = {
+            Connections = {},
+            Connect = function(self, f)
+                table.insert(self.Connections, f)
+            end,
+            Fire = function(self, ...)
+                for _,f in pairs(self.Connections) do
+                    f(...)
+                end
+            end
+        },
         OnClose = function() end
     }
 
     RunService.RenderStepped:Connect(function()
         for _, Mail in pairs(listfiles(MailBox)) do
-            Socket.OnMessage(readfile(Mail))
+            Socket.OnMessage:Fire(readfile(Mail))
 
             delfile(Mail)
         end
