@@ -1,4 +1,6 @@
 
+repeat wait() until game.Players.LocalPlayer
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
