@@ -26,7 +26,7 @@ function FileSocket.Connect(Channel)
                     writefile(Channel .. Bot .. "/" .. HttpService:GenerateGUID(false) .. ".mail", Message)
                 end
             else
-                for _, Bot in pairs(listfiles("Mail")) do
+                for _, Bot in pairs(listfiles(Channel)) do
                     writefile(Channel .. string.sub(Bot, #Channel, #Bot) .. "/" .. HttpService:GenerateGUID(false) .. ".mail", Message)
                 end
             end
