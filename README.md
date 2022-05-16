@@ -1,5 +1,5 @@
 # FileSocket
-**Alternative to websockets that communicates with files**
+**Alternative to websockets that communicates with files.**
 # Documentation
 ### Connect
 **Connects to the channel specified**
